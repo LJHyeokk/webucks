@@ -1,4 +1,5 @@
-const items = [
+// 콜드브루 아이템들
+const 콜드브루 = [
   {
     img: "./images/coffee5.png",
     name: "바닐라 크림 콜드 브루",
@@ -36,8 +37,8 @@ const items = [
     name: "프렌치 애플 타르트 나이트로",
   },
 ];
-
-const items1 = [
+// 에스프레소 아이템들
+const 에스프레소 = [
   {
     img: "./images/coffee5.png",
     name: "아이스 카페 아메리카노",
@@ -83,37 +84,41 @@ const items1 = [
     name: "사케라또 비안코 오버 아이스",
   },
 ];
-let origin = document.getElementsByClassName("상품들")[0].innerHTML; // 기존의 상품들 저장.
-let origin1 = document.getElementsByClassName("상품들")[1].innerHTML; // 기존의 상품들 저장.
-document.getElementsByClassName("more")[0].addEventListener("click", () => {
-  let item = document.getElementsByClassName("상품들")[0];
-  if (document.getElementsByClassName("more")[0].innerHTML === "더보기")
-    for (let i = 0; i < items.length; i++) {
-      item.innerHTML =
-        item.innerHTML +
-        `<div class='add'><img src=${items[i].img} /><h4>${items[i].name}</h4></div>`;
-      document.getElementsByClassName("more")[0].innerHTML = "접기";
+
+const 콜드브루기본값 = document.getElementsByClassName("상품들")[0].innerHTML; // 기존의 상품들 저장.
+const 에스프레소기본값 = document.getElementsByClassName("상품들")[1].innerHTML; // 기존의 상품들 저장.
+const 콜드브루더보기버튼 = document.getElementsByClassName("more")[0];
+const 에스프레소더보기버튼 = document.getElementsByClassName("more")[1];
+
+콜드브루더보기버튼.addEventListener("click", () => {
+  let 상품이보여지는공간 = document.getElementsByClassName("상품들")[0];
+  if (콜드브루더보기버튼.innerHTML === "더보기")
+    for (let i = 0; i < 콜드브루.length; i++) {
+      상품이보여지는공간.innerHTML =
+        상품이보여지는공간.innerHTML +
+        `<div class='add'><img src=${콜드브루[i].img} /><h4>${콜드브루[i].name}</h4></div>`;
+      콜드브루더보기버튼.innerHTML = "접기";
     }
   else {
-    item.innerHTML = origin;
-    document.getElementsByClassName("more")[0].innerHTML = "더보기";
+    상품이보여지는공간.innerHTML = 콜드브루기본값;
+    콜드브루더보기버튼.innerHTML = "더보기";
   }
 });
 
-document.getElementsByClassName("more")[1].addEventListener("click", () => {
-  let item = document.getElementsByClassName("상품들")[1];
+에스프레소더보기버튼.addEventListener("click", () => {
+  let 상품이보여지는공간 = document.getElementsByClassName("상품들")[1];
 
-  if (document.getElementsByClassName("more")[1].innerHTML === "더보기")
+  if (에스프레소더보기버튼.innerHTML === "더보기")
     // 버튼누르면 배열에서 값을 가져와서 보여줌.
-    for (let i = 0; i < items1.length; i++) {
-      item.innerHTML =
-        item.innerHTML +
-        `<div class='add'><img src=${items1[i].img} /><h4>${items1[i].name}</h4></div>`;
-      document.getElementsByClassName("more")[1].innerHTML = "접기";
+    for (let i = 0; i < 에스프레소.length; i++) {
+      상품이보여지는공간.innerHTML =
+        상품이보여지는공간.innerHTML +
+        `<div class='add'><img src=${에스프레소[i].img} /><h4>${에스프레소[i].name}</h4></div>`;
+      에스프레소더보기버튼.innerHTML = "접기";
     }
   else {
-    item.innerHTML = origin1;
-    document.getElementsByClassName("more")[1].innerHTML = "더보기";
+    상품이보여지는공간.innerHTML = 에스프레소기본값;
+    에스프레소더보기버튼.innerHTML = "더보기";
     console.log("asd");
   }
 });
