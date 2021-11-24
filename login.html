@@ -13,8 +13,13 @@
         <img src="./images/logo.png" alt="로고이미지" />
       </div>
       <form class="login-form">
-        <input id="id" placeholder="전화번호, 사용자 이름 또는 이메일" />
+        <input
+          id="id"
+          placeholder="전화번호, 사용자 이름 또는 이메일"
+          autocomplete="off"
+        />
         <input type="password" id="pw" placeholder="비밀번호" />
+        <button class="showHide" type="button">show</button>
         <button id="toList" type="button">로그인</button>
       </form>
       <div class="login-forget">

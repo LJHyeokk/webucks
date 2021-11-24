@@ -23,6 +23,24 @@
   display: flex;
   flex-direction: column;
   align-content: space-around;
+  position: relative;
+}
+
+input:focus {
+  outline: none;
+}
+
+.showHide {
+  position: absolute;
+  top: 42%;
+  left: 78%;
+  border: none;
+  background-color: thistle;
+  color: white;
+  font-weight: bold;
+  height: 15%;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .login-form input {
@@ -34,7 +52,7 @@
   font-size: 1rem;
 }
 
-.login-form button {
+#toList {
   margin: 1.5% 10%;
   padding: 2%;
   border-radius: 5px;

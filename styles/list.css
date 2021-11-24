@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 header {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
   width: 60%;
   margin-left: 20%;
   height: 60px;
@@ -28,6 +31,7 @@ header:not(:hover) .nav li {
 .container {
   width: 60%;
   margin-left: 20%;
+  margin-top: 100px;
 }
 
 .nav li {
@@ -67,35 +71,28 @@ header:not(:hover) .nav li {
   flex-wrap: wrap;
 }
 
-.콜드브루 button {
-  width: 130px;
-  font-size: 20px;
-  margin-left: 45%;
-  background-color: #9ac23b;
-  color: #e3edf6;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-}
-
-.에스프레소 button {
-  width: 130px;
-  font-size: 20px;
-  margin-left: 45%;
-  background-color: #9ac23b;
-  color: #e3edf6;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-}
 .add {
-  margin-left: 5%;
-  width: 20%;
+  width: 25%;
   height: 300px;
-  display: inline;
   text-align: center;
   transform: scale(1);
   transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  margin-top: 30px;
+}
+
+.like {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.add h4 {
+  display: inline;
 }
 
 .add img {
